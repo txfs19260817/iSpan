@@ -133,8 +133,8 @@ inline void trim_2_from_graph(
                 ///add trim size-1: neighbor_out_degree == 0
                 if(neighbor_in_degree == 1 && neighbor_in_neighbor == vert_id)
                 {
-                    scc_id[vert_id] = -2;
-                    scc_id[in_neighbor] = -2;
+                    scc_id[vert_id] = vert_id;
+                    scc_id[in_neighbor] = vert_id;
                     continue;
                 }
             }
@@ -213,8 +213,8 @@ inline void trim_2_from_fq(
                 ///add trim size-1: neighbor_out_degree == 0
                 if(neighbor_out_degree == 1 && neighbor_out_neighbor == vert_id)
                 {
-                    scc_id[vert_id] = -2;
-                    scc_id[out_neighbor] = -2;
+                    scc_id[vert_id] = vert_id;
+                    scc_id[out_neighbor] = vert_id;
                     continue;
                 }
             }
@@ -272,8 +272,8 @@ inline void trim_2_from_fq(
                 ///add trim size-1: neighbor_out_degree == 0
                 if(neighbor_in_degree == 1 && neighbor_in_neighbor == vert_id)
                 {
-                    scc_id[vert_id] = -2;
-                    scc_id[in_neighbor] = -2;
+                    scc_id[vert_id] = vert_id;
+                    scc_id[in_neighbor] = vert_id;
                     continue;
                 }
             }
@@ -379,9 +379,9 @@ inline void trim_3_1_from_graph(
                     }
                     if(C_out_degree == 1 && C_out_neighbor == vert_id)
                     {
-                        scc_id[vert_id] = -3;
-                        scc_id[out_neighbor] = -3;
-                        scc_id[B_out_neighbor] = -3;
+                        scc_id[vert_id] = vert_id;
+                        scc_id[out_neighbor] = vert_id;
+                        scc_id[B_out_neighbor] = vert_id;
 //                            printf("Out_A = %d, B = %d, C = %d\n", vert_id, out_neighbor, B_out_neighbor);
 //                        size_3_type_1++;
                     }
@@ -467,9 +467,9 @@ inline void trim_3_1_from_graph(
                     }
                     if(C_in_degree == 1 && C_in_neighbor == vert_id)
                     {
-                        scc_id[vert_id] = -3;
-                        scc_id[in_neighbor] = -3;
-                        scc_id[B_in_neighbor] = -3;
+                        scc_id[vert_id] = vert_id;
+                        scc_id[in_neighbor] = vert_id;
+                        scc_id[B_in_neighbor] = vert_id;
 //                        size_3_type_1++;
                     }
                 }
@@ -576,9 +576,9 @@ inline void trim_3_1_from_fq(
                     }
                     if(C_out_degree == 1 && C_out_neighbor == vert_id)
                     {
-                        scc_id[vert_id] = -3;
-                        scc_id[out_neighbor] = -3;
-                        scc_id[B_out_neighbor] = -3;
+                        scc_id[vert_id] = vert_id;
+                        scc_id[out_neighbor] = vert_id;
+                        scc_id[B_out_neighbor] = vert_id;
 //                            printf("Out_A = %d, B = %d, C = %d\n", vert_id, out_neighbor, B_out_neighbor);
 //                        size_3_type_1++;
                     }
@@ -664,9 +664,9 @@ inline void trim_3_1_from_fq(
                     }
                     if(C_in_degree == 1 && C_in_neighbor == vert_id)
                     {
-                        scc_id[vert_id] = -3;
-                        scc_id[in_neighbor] = -3;
-                        scc_id[B_in_neighbor] = -3;
+                        scc_id[vert_id] = vert_id;
+                        scc_id[in_neighbor] = vert_id;
+                        scc_id[B_in_neighbor] = vert_id;
 //                        size_3_type_1++;
                     }
                 }
@@ -775,9 +775,9 @@ inline void trim_3_2_from_graph(
                     }
                     if(C_out_degree == 1 && C_out_neighbor == vert_id)
                     {
-                        scc_id[vert_id] = -4;
-                        scc_id[out_neighbor_B] = -4;
-                        scc_id[out_neighbor_C] = -4;
+                        scc_id[vert_id] = vert_id;
+                        scc_id[out_neighbor_B] = vert_id;
+                        scc_id[out_neighbor_C] = vert_id;
 //                        size_3_type_2 ++;
                     }
                 }
@@ -865,9 +865,9 @@ inline void trim_3_2_from_graph(
                     }
                     if(C_in_degree == 1 && C_in_neighbor == vert_id)
                     {
-                        scc_id[vert_id] = -4;
-                        scc_id[in_neighbor_B] = -4;
-                        scc_id[in_neighbor_C] = -4;
+                        scc_id[vert_id] = vert_id;
+                        scc_id[in_neighbor_B] = vert_id;
+                        scc_id[in_neighbor_C] = vert_id;
 //                        size_3_type_2 ++;
                     }
                 }
@@ -976,9 +976,9 @@ inline void trim_3_2_from_fq(
                     }
                     if(C_out_degree == 1 && C_out_neighbor == vert_id)
                     {
-                        scc_id[vert_id] = -4;
-                        scc_id[out_neighbor_B] = -4;
-                        scc_id[out_neighbor_C] = -4;
+                        scc_id[vert_id] = vert_id;
+                        scc_id[out_neighbor_B] = vert_id;
+                        scc_id[out_neighbor_C] = vert_id;
 //                        size_3_type_2 ++;
                     }
                 }
@@ -1066,9 +1066,9 @@ inline void trim_3_2_from_fq(
                     }
                     if(C_in_degree == 1 && C_in_neighbor == vert_id)
                     {
-                        scc_id[vert_id] = -4;
-                        scc_id[in_neighbor_B] = -4;
-                        scc_id[in_neighbor_C] = -4;
+                        scc_id[vert_id] = vert_id;
+                        scc_id[in_neighbor_B] = vert_id;
+                        scc_id[in_neighbor_C] = vert_id;
 //                        size_3_type_2 ++;
                     }
                 }

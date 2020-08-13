@@ -1,6 +1,6 @@
 exe = ispan
 
-cc = "$(shell which g++)" 
+cc = "/usr/local/bin/g++-10" 
 #flags = -I. -fopenmp -march=athlon64 -O3
 flags = -I. -fopenmp -O3
 #flags += -std=c++11

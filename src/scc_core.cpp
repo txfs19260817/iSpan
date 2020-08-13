@@ -13,6 +13,10 @@
 #include "graph.h"
 //#include "frontier_queue.h"
 #include "scc_common.h"
+#include <fstream>
+#include <iterator>
+#include <unordered_map>
+#include <vector>
 //#include "trim_1.h"
 #include "trim_1_gfq.h"
 #include "trim_2_3.h"
@@ -1075,7 +1079,35 @@ void scc_detection(
 
     get_scc_result(scc_id,
             vert_count);
+    if (VERBOSE) {
+        std::unordered_map<int, std::vector<int>> scc_components;
+        for (index_t i = 0; i < vert_count + 1; ++i) {
+            int key = vert_count + 2;
+            // largest
+            if (scc_id[i] == 1) {
+                key = vert_count + 2;
+            }
+            // trim-1
+            else if (scc_id[i] == -1) {
+                key = i;
+            }
+            // others
+            else {
+                key = scc_id[i];
+            }
 
+            if (!scc_components.count(key)) {
+                scc_components.emplace(key, std::vector<int>());
+            }
+            scc_components.at(key).push_back(i);
+        }
+        std::ofstream o("ispan.txt");
+        for (auto kv : scc_components) {
+            std::copy(kv.second.begin(), kv.second.end(), std::ostream_iterator<int>(o, ","));
+            o << std::endl;
+        }
+        printf("ispan.txt is saved.\n");
+    }
     delete[] scc_id;
     delete[] color;
     delete[] max_pivot_list;
