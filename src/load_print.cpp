@@ -34,7 +34,7 @@ void get_scc_result(
     std::map<index_t, index_t> mp;
     for(index_t i=0; i<vert_count+1; ++i)
     {
-        if(scc_id[i] == 1)
+        if(scc_id[i] == -9)
             largest ++;
         else
             if(scc_id[i] == -1)

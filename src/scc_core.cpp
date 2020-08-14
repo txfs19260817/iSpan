@@ -1077,14 +1077,13 @@ void scc_detection(
     if(DEBUG)
         printf("total time, %.3lf\n", end_time * 1000);
 
-    get_scc_result(scc_id,
-            vert_count);
-    if (VERBOSE) {
+    // get_scc_result(scc_id, vert_count);
+    if (OUT) {
         std::unordered_map<int, std::vector<int>> scc_components;
         for (index_t i = 0; i < vert_count + 1; ++i) {
             int key = vert_count + 2;
             // largest
-            if (scc_id[i] == 1) {
+            if (scc_id[i] == -9) {
                 key = vert_count + 2;
             }
             // trim-1

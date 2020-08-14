@@ -25,7 +25,8 @@ typedef int color_t;
 #define ORPHAN	(unsigned char)254
 #define UNVIS		(long)-1
 #define DEBUG 0 
-#define VERBOSE 0 
+#define VERBOSE 0
+#define OUT 1
 #define OUTPUT_TIME 1
 //#define ALPHA 30 
 //#define BETA 200 
